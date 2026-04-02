@@ -1,3 +1,11 @@
+app.get("/", (req, res) => {
+  res.send("Backend работает 🚀");
+});
+
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
+});
+
 require('dotenv').config();
 const express = require('express');
 const cors    = require('cors');
