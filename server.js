@@ -16,16 +16,6 @@ app.use(cors({
   credentials: true,
 }));
 
-app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
-app.get("/", (req, res) => {
-  res.send("Backend работает 🚀");
-});
-
-app.get("/api/health", (req, res) => {
-  res.json({ status: "ok" });
-});
-
 // ─── Mock data ────────────────────────────────────────────────────────────────
 
 const MOCK_DATA = [
