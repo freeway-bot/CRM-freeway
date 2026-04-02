@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 const express = require('express');
 const cors    = require('cors');
@@ -19,6 +18,13 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.get("/", (req, res) => {
+  res.send("Backend работает 🚀");
+});
+
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
+});
 
 // ─── Mock data ────────────────────────────────────────────────────────────────
 
